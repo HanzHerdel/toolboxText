@@ -28,3 +28,6 @@ Others: The "Send" button is blocked when there is no text to send using Bootstr
 
 ## Backend
 the api has one route, the functionality is splited in controllers and services, it uses #Standarjs to mantain the format and returns an object {text:String, palindrome:Boolean}, in Json format, it uses mocha chai and supertest for testing.
+
+## Docker
+it uses docker containers and docker-compose to unify the proccesses
