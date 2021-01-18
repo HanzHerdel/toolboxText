@@ -1,0 +1,14 @@
+version: "3"
+services:
+  react-app:
+    build:
+      context: ./toolbox
+    image: ferherdel/client-toolbox
+    ports: 
+      - "3000:3000"
+  api-server:
+    build:
+      context: ./api
+    image: ferherdel/server-toolbox
+    ports:
+      - "3001:3001"
