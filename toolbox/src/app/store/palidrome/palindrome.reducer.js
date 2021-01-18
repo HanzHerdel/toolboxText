@@ -14,12 +14,13 @@ const palindromeReducer = function (
       return { ...state, textToConvert: payload };
     }
     case Actions.ADD_TO_RESULTS: {
-            const results = [
+      const results = [
         { text: payload.text, palindrome: payload.palindrome },
         ...state.results,
       ];
       return {
         ...state,
+        textToConvert:"",
         results,
       };
     }

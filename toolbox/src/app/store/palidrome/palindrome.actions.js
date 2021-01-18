@@ -21,7 +21,7 @@ export function updateText(text) {
 }
 
 /**
- * add result to results variable
+ * add result to results array
  * @param {String} result result of convertion
  */
 export function convertText(text = "") {
@@ -34,10 +34,10 @@ export function convertText(text = "") {
         type: ADD_TO_RESULTS,
         payload: response.data,
       });
-      return;
+      return true;
     } catch (error) {
       console.log("error: ", error);
-      return { error };
+      return error;
     }
   };
 }

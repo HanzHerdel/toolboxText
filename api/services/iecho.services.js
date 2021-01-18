@@ -3,7 +3,6 @@ const { formatResponse } = require('./responses.services')
 exports.reverseText = (text) => {
   try {
     const reversed = text.split('').reverse().join('')
-    console.log('reversed: ', reversed)
     const palindrome = isPalindrome(text, reversed)
     return formatResponse({ text: reversed, palindrome })
   } catch (error) {

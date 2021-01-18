@@ -25,25 +25,31 @@ export default function ToolBar(props) {
     if (valid !== validForm) setvalidForm(valid);
   };
 
-  const handleSubmit=()=>{
-    dispatch(convertText(textToConvert));
-  }
+  const handleSubmit =async () => {
+   const valid= await dispatch(convertText(textToConvert));
+   valid && setvalidForm(false)
+  };
   return (
     <Navbar bg="danger" fixed="top">
       <Form inline className="w-100 justify-content-center">
-          <div className="d-flex w-100" style={{ maxWidth:600}}>
-            <FormControl
-              onChange={(e) => handleChage(e)}
-              required
-              type="text"
-              placeholder="Insert Text"
-              className="mx-2 my-1 flex-grow-1"
-              value={textToConvert}
-            />
-            <Button onClick={handleSubmit} className="mx-2 my-1 px-4" variant="primary" disabled={!validForm}>
-              Send
-            </Button>
-          </div>
+        <div className="d-flex w-100" style={{ maxWidth: 600 }}>
+          <FormControl
+            onChange={(e) => handleChage(e)}
+            required
+            type="text"
+            placeholder="Insert Text"
+            className="mx-2 my-1 flex-grow-1"
+            value={textToConvert}
+          />
+          <Button
+            onClick={handleSubmit}
+            className="mx-2 my-1 px-4"
+            variant="primary"
+            disabled={!validForm}
+          >
+            Send
+          </Button>
+        </div>
       </Form>
     </Navbar>
   );
