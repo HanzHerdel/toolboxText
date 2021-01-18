@@ -1,0 +1,6 @@
+[submodule "clientToolbox"]
+	path = clientToolbox
+	url = https://github.com/HanzHerdel/clientToolbox
+[submodule "serverToolBox"]
+	path = serverToolBox
+	url = https://github.com/HanzHerdel/serverToolBox.git
